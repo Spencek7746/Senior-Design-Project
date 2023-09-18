@@ -1,16 +1,9 @@
 import cv2
 import numpy as np
-import matplotlib.pylab as plt
+from roboflow import Roboflow
+from ultralytics import YOLO
 
-video = cv2.VideoCapture(0)
-video.set(3,640)
-tags = ["Taken", "Empty"]
-ret, frame = video.read()
+model = YOLO('yolov8n.yaml')
 
-#parking_lot_files = "parking_lot_empty.jpg"
-#image = cv2.imread(parking_lot_files)
+model.train(data=r'C:\Users\karpa\source\repos\Senior-Design-Project\Data\data.yaml', epochs=100, imgsz=640)
 
-#cv2.imshow('Image', image)
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()

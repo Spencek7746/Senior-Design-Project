@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['Empty', 'Taken']
+
+roboflow:
+  workspace: university-of-tennessee-at-martin
+  project: parking-lot-saxzu
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/university-of-tennessee-at-martin/parking-lot-saxzu/dataset/1
