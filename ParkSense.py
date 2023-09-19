@@ -5,5 +5,7 @@ from ultralytics import YOLO
 
 model = YOLO('yolov8n.yaml')
 
-model.train(data=r'C:\Users\karpa\source\repos\Senior-Design-Project\Data\data.yaml', epochs=100, imgsz=640)
+model.train(data=r'.\Data\data.yaml', epochs=100, imgsz=640)
+
+
 
