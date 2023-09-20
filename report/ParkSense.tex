@@ -35,7 +35,7 @@
 % and that copies bear this notice and the full citation on the first
 % page. Copyrights for components of this work owned by others than ACM
 % must be honored. Abstracting with credit is permitted. To copy
-% otherwise, or republish, to post on servers or to redistribute to
+% otherwise, or republish, to post on servers, or to redistribute to
 % lists, requires prior specific permission and/or a fee. Request
 % permissions from \href{mailto:Permissions@acm.org}{Permissions@acm.org}. \\
 % \emph{CHI '16},  May 07--12, 2016, San Jose, CA, USA \\
@@ -44,12 +44,12 @@
 % }
 
 % Arabic page numbers for submission.  Remove this line to eliminate
-% page numbers for the camera ready copy
+% page numbers for the camera-ready copy
 % \pagenumbering{arabic}
 
 % Load basic packages
 \usepackage{balance}       % to better equalize the last page
-\usepackage{graphics}      % for EPS, load graphicx instead 
+\usepackage{graphics}      % for EPS, load graphics instead 
 \usepackage[T1]{fontenc}   % for umlauts and other diaeresis
 \usepackage{txfonts}
 \usepackage{mathptmx}
@@ -136,12 +136,12 @@
 
 \numberofauthors{3}
 \author{%
-  \alignauthor{Spencer Karpati\\
-    \affaddr{Martin, Tennessee, USA}\\
-    \email{spebkarp@ut.utm.edu}}\\
   \alignauthor{Aaron Alden\\
     \affaddr{Martin, Tennessee, USA}\\
     \email{aardalde@ut.utm.edu}}\\
+  \alignauthor{Spencer Karpati\\
+    \affaddr{Martin, Tennessee, USA}\\
+    \email{spebkarp@ut.utm.edu}}\\ 
   \alignauthor{Zachary Rose\\
     \affaddr{Martin, Tennessee, USA}\\
     \email{zacerose@ut.utm.edu}}\\
@@ -150,27 +150,15 @@
 \maketitle
 
 \begin{abstract}
-  UPDATED---\today. A problem that has always plagued our campus is the
-struggle to find open parking anywhere during class hours. This has led 
+Our campus suffers from insufficient parking spaces. This has led 
 to students parking farther away from campus, leading to longer-than-expected
-travel times to arrive to class. Consequentially, some students may arrive late,
-disrupting the lecture and possibly leaving a mark on their attendance grade. \\\\
-To address this issue, we are working on an IoT approach to solving this problem by using 
-OpenCV, a Raspberry Pi, and a camera module. With OpenCV's extensive and
-real-time computer vision library, we will build our own object detection 
-software that is trained on our own custom data to detect empty and taken 
-parking spots. We will then feed this data to a user interface which will 
-update periodically and accurately communicate the availability of parking 
-to the user. If we are finished with our main goals before our project 
-deadline, we will implement our stretch goals for the project such as
-statistical analysis of sampled data regarding the best and worst times
-to find open parking and the creation of a mobile-formatted version of 
-our interface. \\\\The duration of the implementation and completion of the
-project's base goals as well as any further implementation of stretch goals 
-before our deadline is roughly 3 months (August-November). We will be using
-a parking-lot mock-up to assist the creation of our data as we believe that 
-any modification and collection data will be substantially easier as compared 
-to the required set-up and maintenance for collecting data of a real parking-lot.
+travel times to arrive to class. Consequentially, because some students arrive late, they
+disrupt the lecture and leave a mark on their attendance. \\\\
+To address this issue, we would like to introduce you to our IoT approach to solving this problem by using 
+OpenCV, YOLOv8, a Raspberry Pi, and a camera module. With OpenCV's real-time computer vision library and YOLOv8's deep learning capabilities, we will 
+explain how we built our own object detection software that is trained on custom data to 
+detect empty and taken parking spots. \\\\
+The scope of this project is to use computer vision and a camera stream to detect in real time the availability of parking in a parking lot. The computer vision software will be trained on a custom data set for accuracy. A Raspberry Pi is used for collecting data, running calculations, and outputting the results of the pattern recognition. A user interface in the form of a website will be available for the user, which will update periodically and accurately communicate the availability of parking spots. Additional analysis will be available regarding the best and worst times to find open parking based on periodic samples taken.
 \end{abstract}
 
 
@@ -180,14 +168,13 @@ to the required set-up and maintenance for collecting data of a real parking-lot
 
 
 \section{Introduction}
+The purpose of developing ParkSense is to detect and deliver relevant information about parking to Students and Faculty in real-time. Using the design philosophy \textit{The Internet of Things}, we intend to show how it's possible to use machine learning and computer vision technologies to make things more convenient in a cost-effective manner. By training a new model, this technology can be applied to many different aspects of life.
 
-This format is to be used for submissions that are published in the
-conference proceedings. We wish to give this volume a consistent,
-high-quality appearance. We therefore ask that authors follow some
-simple guidelines. You should format your paper exactly like this
-document. The easiest way to do this is to replace the content with
-your own material.  This document describes how to prepare your
-submissions using \LaTeX.
+The technologies in use are primarily software-based. A camera feed is used for data input, and a Raspberry Pi can be used for data processing and delivery. We intend to show how to build a data set for training a model, how to train said model using the data set, and how you can use the model to generate a useful set of data to feed to a user interface. We want to show how to do all of this with the selected modules that we will use for this project: OpenCV, YOLOv8, and RoboFlow.
+
+OpenCV will provide computer vision for real-time processing for our video feed while YOLOv8 will provide a deep learning algorithm for training on our dataset and producing weights for our model once training is complete. RoboFlow will help with labelling each image of our mock-up with taken and empty instances as it provides extensive image annotation tools needed to produce a training data-set that is accurate and efficient. We will record mean average confidence, recalls, and object loss across different epoch values to show how the algorithm produces more accurate results with more training.
+
+
 
 \section{Page Size and Columns}
 On each page your material should fit within a rectangle of 7 $\times$
@@ -557,3 +544,5 @@ Citing something\cite{unrealweb}. Citing something else.\cite{smit54}
 \bibliography{bibliography}
 
 \end{document}
+
+
