@@ -59,10 +59,15 @@
             align-items: center;
             pointer-events: none;
             font-size: 2vw;
+            color: black
         }
 
         .progress-bar.full {
             background-color: #FF0000;
+        }
+
+        .progress-bar.filling_up {
+            background-color: yellow; 
         }
 
         .progress-bar.empty {
@@ -89,8 +94,9 @@
             progressBar.style.width = percentage + "%";
             progressText.textContent = percentage + "% Full";
 
-            progressBar.classList.toggle("full", percentage > 50);
-            progressBar.classList.toggle("empty", percentage <= 50);
+            progressBar.classList.toggle("empty", percentage < 25);
+            progressBar.classList.toggle("filling_up", percentage >= 25 && percentage < 75); 
+            progressBar.classList.toggle("full", percentage >= 75);
 
             const totalSpaces = 100; // Assuming total parking spaces
             const emptySpaces = totalSpaces * (100 - percentage) / 100;
