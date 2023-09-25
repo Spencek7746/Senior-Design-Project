@@ -1,1 +1,109 @@
-TEST
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Status</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b2341;
+            font-family: "Archer", sans-serif;
+            text-align: center;
+        }
+
+        .website-title {
+            color: #FF8200;
+            font-size: 36px;
+            padding-top: 20px;
+        }
+
+        .subheading {
+            font-size: 24px;
+            color: #FF8200;
+            margin-top: 20px;
+        }
+
+        .subsubheading {
+            font-size: 16px;
+            color: white;
+        }
+
+        .progress-container {
+            margin: 30px auto;
+            width: 60%;
+            background-color: #fff;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .progress-bar {
+            width: 75%;
+            height: 30px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 30px;
+            color: #ffffff;
+            position: relative;
+            transition: background-color 0.5s;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .progress-bar.full {
+            background-color: #FF0000; 
+        }
+
+        .progress-bar.empty {
+            background-color: #00FF00; 
+        }
+    </style>
+</head>
+<body>
+    <h1 class="website-title">ParkSense</h1>
+    <h2 class="subheading">Current capacity for lot X:</h2>
+    <div class="progress-container">
+        <div class="progress-bar full" id="parking-progress">
+            <div class="progress-text">75% Full</div>
+        </div>
+    </div>
+    <h3 class="subsubheading">Empty Spaces: <span id="empty-spaces">25</span></h3>
+
+    <script>
+        function updateProgressBar(percentage) {
+            const progressBar = document.getElementById("parking-progress");
+            const progressText = progressBar.querySelector(".progress-text");
+            const emptySpacesElement = document.getElementById("empty-spaces");
+            
+            progressBar.style.width = percentage + "%";
+            progressText.textContent = percentage + "% Full";
+
+            if (percentage <= 50) {
+                progressBar.classList.remove("full");
+                progressBar.classList.add("empty");
+            } else {
+                progressBar.classList.remove("empty");
+                progressBar.classList.add("full");
+            }
+
+            const totalSpaces = 100; // Assuming total parking spaces
+            const emptySpaces = totalSpaces * (100 - percentage) / 100;
+            emptySpacesElement.textContent = emptySpaces.toFixed(0);
+        }
+
+        updateProgressBar(75); // Change this value as needed
+    </script>
+</body>
+</html>
+

@@ -78,12 +78,13 @@
             <div class="progress-text">75% Full</div>
         </div>
     </div>
-    <h3 class="subsubheading">Empty Spaces: </h3>
+    <h3 class="subsubheading">Empty Spaces: <span id="empty-spaces">25</span></h3>
 
     <script>
         function updateProgressBar(percentage) {
             const progressBar = document.getElementById("parking-progress");
             const progressText = progressBar.querySelector(".progress-text");
+            const emptySpacesElement = document.getElementById("empty-spaces");
             
             progressBar.style.width = percentage + "%";
             progressText.textContent = percentage + "% Full";
@@ -95,9 +96,13 @@
                 progressBar.classList.remove("empty");
                 progressBar.classList.add("full");
             }
+
+            const totalSpaces = 100; // Assuming total parking spaces
+            const emptySpaces = totalSpaces * (100 - percentage) / 100;
+            emptySpacesElement.textContent = emptySpaces.toFixed(0);
         }
 
-        updateProgressBar(45); // Change this value as needed
+        updateProgressBar(75); // Change this value as needed
     </script>
 </body>
 </html>
