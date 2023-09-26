@@ -15,23 +15,23 @@
 
         .website-title {
             color: #FF8200;
-            font-size: 4vw; 
-            padding-top: 2vh; 
+            font-size: 4vw;
+            padding-top: 2vh;
         }
 
         .subheading {
-            font-size: 3vw; 
             color: #FF8200;
-            margin-top: 2vh; 
+            font-size: 3vw;
+            margin-top: 2vh;
         }
 
         .subsubheading {
-            font-size: 2vw; 
             color: white;
+            font-size: 2vw;
         }
 
         .progress-container {
-            margin: 3vh auto; 
+            margin: 3vh auto;
             width: 60%;
             background-color: #fff;
             border-radius: 5px;
@@ -39,11 +39,10 @@
         }
 
         .progress-bar {
-            width: 75%;
-            height: 30px;
+            height: 5vw; 
             border-radius: 5px;
             text-align: center;
-            line-height: 30px;
+            line-height: 5vw; 
             color: #ffffff;
             position: relative;
             transition: background-color 0.5s;
@@ -59,14 +58,20 @@
             justify-content: center;
             align-items: center;
             pointer-events: none;
+            font-size: 2vw;
+            color: black
         }
 
         .progress-bar.full {
-            background-color: #FF0000; 
+            background-color: #FF0000;
+        }
+
+        .progress-bar.filling_up {
+            background-color: yellow; 
         }
 
         .progress-bar.empty {
-            background-color: #00FF00; 
+            background-color: #00FF00;
         }
     </style>
 </head>
@@ -85,24 +90,20 @@
             const progressBar = document.getElementById("parking-progress");
             const progressText = progressBar.querySelector(".progress-text");
             const emptySpacesElement = document.getElementById("empty-spaces");
-            
+
             progressBar.style.width = percentage + "%";
             progressText.textContent = percentage + "% Full";
 
-            if (percentage <= 50) {
-                progressBar.classList.remove("full");
-                progressBar.classList.add("empty");
-            } else {
-                progressBar.classList.remove("empty");
-                progressBar.classList.add("full");
-            }
+            progressBar.classList.toggle("empty", percentage < 25);
+            progressBar.classList.toggle("filling_up", percentage >= 25 && percentage < 75); 
+            progressBar.classList.toggle("full", percentage >= 75);
 
             const totalSpaces = 100; // Assuming total parking spaces
             const emptySpaces = totalSpaces * (100 - percentage) / 100;
             emptySpacesElement.textContent = emptySpaces.toFixed(0);
         }
 
-        updateProgressBar(45); // Change this value as needed
+        updateProgressBar(75); // Change this value as needed
     </script>
 </body>
 </html>
