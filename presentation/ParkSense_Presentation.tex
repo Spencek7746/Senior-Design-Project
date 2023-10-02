@@ -4,6 +4,7 @@
 
 \usepackage{verbatim}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
 %% UTM Colors
 \definecolor{UTMblue}{rgb}{0.043137, 0.137254, 0.254901}
@@ -47,93 +48,116 @@
 
 \title{Senior Design Project - ParkSense}
 
-\author{Spencer Karpati, Aaron Alden, and Zachary Rose}
+\author{Aaron Alden, Spencer Karpati, Zachary Rose}
 \institute{UT-Martin}
 \date{\today}
 
 %%%%%%%%%%% BEGIN TITLE %%%%%%%%%%%%%%%%%%
 \frame{\titlepage}
 
- %\section{Outline}
+%\section{Outline}
 %%%%%%%%%%%% END TITLE  %%%%%%%%%%%%%%%%%%
 
 
 \section{Introduction}
 \frameT{Motivation} {
-  List some of your motivations here!
+  Background
   \bigskip
   \begin{enumerate}
-    \item Some ideas
-      \bigskip
-    \item More ideas!
+  \item Parking shortage
+    \bigskip
+  \item Computer Vision
+    \bigskip
   \end{enumerate}
 
   \bigskip
-  
-  One or more slides of \emph{background} or \emph{motivation}.
+
 }
 
-\frameT{Project Goals} {
-  Described what you are trying to accomplish, including ``stretch'' goals.
+%\frameT{Project Goals} {
+% Described what you are trying to accomplish, including ``stretch'' goals.
+%}
+
+%\section{Sections--a useful organizational tool.}
+\section{}
+
+\frameT{Technology}{
+  \begin{enumerate}
+  \item Computer Vision and Machine Learning
+    \begin{enumerate}
+    \item OpenCV
+      \bigskip
+    \item Ultralytics: YOLOv8
+    \end{enumerate}
+    \bigskip
+  \item Hardware
+    \begin{enumerate}
+    \item Raspberry Pi 2 Model B
+      \bigskip
+    \item Raspberry Pi Camera Module
+    \end{enumerate}
+  \end{enumerate}
+
 }
 
-\section{Sections--a useful organizational tool.}
 
-\frameT{}{
+\frameT{Demonstration}{
+  \centering
+  \includegraphics[width=.6\linewidth]{figures/CV_example.jpg}
+
+  \href{https://spencek7746.github.io/Senior-Design-Project}{Webpage}
 }
 
+%\begin{frame}[fragile]
+%\frametitle{Family Tree Knowledge Base}
+%Facts:
+%\begin{verbatim}
+%Verbatim is a great way of enumerating code/algorithmic ideas.
+%\end{verbatim}
+%\end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Family Tree Knowledge Base}
-Facts:
-\begin{verbatim}
-Verbatim is a great way of enumerating code/algorithmic ideas.
-\end{verbatim}
-\end{frame}
+%\frameT{How to include images} {
+%% \includegraphics[width=.7\linewidth]{figures/image.pdf}
+%}
 
 
-\frameT{How to include images} {
-  %% \includegraphics[width=.7\linewidth]{figures/image.pdf}
-}
+%\begin{frame}[fragile]
+%  \frametitle{Social Network Graph}
+%  \begin{figure}[ht]
+%    \begin{minipage}[b]{0.53\linewidth}
+%      \centering
+%      Minipages are a great way to
+%    \end{minipage}
+%    \hspace{0.5cm}
+%    \begin{minipage}[b]{0.4\linewidth}
+%      \centering
+%      Line up side-by-side content.
+
+%    \end{minipage}
+%  \end{figure}
+
+%\end{frame}
 
 
-\begin{frame}[fragile]
-  \frametitle{Social Network Graph}
-  \begin{figure}[ht]
-    \begin{minipage}[b]{0.53\linewidth}
-      \centering
-      Minipages are a great way to
-    \end{minipage}
-    \hspace{0.5cm}
-    \begin{minipage}[b]{0.4\linewidth}
-      \centering
-      Line up side-by-side content.
+%\frameT{Results} {
+%  Describe any results of your work here.
 
-    \end{minipage}
-  \end{figure}
-  
-\end{frame}
+%  \bigskip
 
+%  Things that worked?
 
-\frameT{Results} {
-  Describe any results of your work here.
+%  \bigskip
 
-  \bigskip
+%  Things that didn't work?
+%}
 
-  Things that worked?
-
-  \bigskip
-
-  Things that didn't work?
-}
-
-\frameT{Conclusions} {
-  Some bullet points here to wrap things up.
-}
+%\frameT{Conclusions} {
+%  Some bullet points here to wrap things up.
+%}
 
 \frameT{Any Questions?} {
-  
+
   \begin{center}
     Questions?
   \end{center}
@@ -144,6 +168,9 @@ Verbatim is a great way of enumerating code/algorithmic ideas.
   \bigskip
 
   Further project/author information:
+  \begin{center}
+    Please see our Github repo: \href{https://github.com/Spencek7746/Senior-Design-Project}{https://github.com/Spencek7746/Senior-Design-Project}
+  \end{center}
   \begin{center}
     \includegraphics[width=4cm]{figures/6AnLddq.png}
   \end{center}
@@ -163,7 +190,7 @@ Verbatim is a great way of enumerating code/algorithmic ideas.
 
 %Empty Page
 %\frameT{Frame 1}{
-%}  
+%}
 
 
 \end{document}
