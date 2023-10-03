@@ -6,7 +6,7 @@ from ultralytics import YOLO
 
 def trainModel():
    results = model.train(
-       data = r'.\Data\data.yaml',
+       data = r'../Data/data.yaml',
        imgsz = 640,
        epochs = 250,
        batch = 8,
@@ -14,7 +14,7 @@ def trainModel():
        ) 
 
 def verifyModelVideo():
-    video_path = r'./examples/example1.mp4'
+    video_path = r'../examples/example1.mp4'
     video_path_out = '{}_out.mp4'.format(video_path)
 
     video_capture = cv2.VideoCapture(video_path)
@@ -22,7 +22,7 @@ def verifyModelVideo():
     H, W, _ = frame.shape
     out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'mp4v'), int(video_capture.get(cv2.CAP_PROP_FPS)), (W, H))
 
-    model = YOLO(r'./runs/detect/test_model250/weights/best.pt')
+    model = YOLO(r'../runs/detect/test_model250/weights/best.pt')
     threshold = 0.5
 
     class_name_dict = {0: 'Empty',
@@ -46,12 +46,12 @@ def verifyModelVideo():
         ret, frame = video_capture.read()
 
 def verifyModel():
-    model = YOLO(r'./runs/detect/test_model250/weights/best.pt')
+    model = YOLO(r'../runs/detect/test_model250/weights/best.pt')
 
-    image_path = r'./examples/exampleImg.jpg'
-    image = cv2.imread(r'./examples/exampleImg.jpg')
+    image_path = r'../examples/exampleImg.jpg'
+    image = cv2.imread(r'../examples/exampleImg.jpg')
 
-    results = model(r'./examples/exampleImg.jpg')
+    results = model(r'../examples/exampleImg.jpg')
 
 
     threshold = 0.5
