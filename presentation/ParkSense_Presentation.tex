@@ -5,6 +5,7 @@
 \usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{enumerate}
 
 %% UTM Colors
 \definecolor{UTMblue}{rgb}{0.043137, 0.137254, 0.254901}
@@ -46,7 +47,7 @@
 
 \begin{document}
 
-\title{Senior Design Project - ParkSense}
+\title{ParkSense}
 
 \author{Aaron Alden, Spencer Karpati, Zachary Rose}
 \institute{UT-Martin}
@@ -55,46 +56,52 @@
 %%%%%%%%%%% BEGIN TITLE %%%%%%%%%%%%%%%%%%
 \frame{\titlepage}
 
-%\section{Outline}
+ %\section{Outline}
 %%%%%%%%%%%% END TITLE  %%%%%%%%%%%%%%%%%%
 
 
 \section{Introduction}
 \frameT{Motivation} {
   Background
-  \bigskip
+   \begin{figure}[ht]
+   \begin{minipage}[c]{0.4\linewidth}
   \begin{enumerate}
-  \item Parking shortage
-    \bigskip
-  \item Computer Vision
-    \bigskip
+  \item Parking Shortage%
+      \bigskip
+    \item Computer Vision%
+     \bigskip
   \end{enumerate}
-
-  \bigskip
-
+   \end{minipage}
+   \hspace{0.5cm}
+   \begin{minipage}[c]{0.4\linewidth}
+\centering
+\includegraphics[width=1.1\linewidth]{figures/lot_1.jpg}
+   \end{minipage}
+ \end{figure}
+  
 }
 
 %\frameT{Project Goals} {
-% Described what you are trying to accomplish, including ``stretch'' goals.
+ % Described what you are trying to accomplish, including ``stretch'' goals.
 %}
 
 %\section{Sections--a useful organizational tool.}
 \section{}
 
 \frameT{Technology}{
-  \begin{enumerate}
-  \item Computer Vision and Machine Learning
-    \begin{enumerate}
-    \item OpenCV
-      \bigskip
-    \item Ultralytics: YOLOv8
+\begin{enumerate}
+    \item Computer Vision and Machine Learning
+    \begin{enumerate}[(a)]
+        \item OpenCV
+        \bigskip
+        \item Ultralytics: YOLOv8
     \end{enumerate}
     \bigskip
-  \item Hardware
-    \begin{enumerate}
-    \item Raspberry Pi 2 Model B
-      \bigskip
-    \item Raspberry Pi Camera Module
+    \item Hardware
+    \begin{enumerate}[(a)]
+        \item Raspberry Pi 2 Model B
+        \bigskip
+        \item Raspberry Pi Camera Module
     \end{enumerate}
   \end{enumerate}
 
@@ -102,10 +109,10 @@
 
 
 \frameT{Demonstration}{
-  \centering
-  \includegraphics[width=.6\linewidth]{figures/CV_example.jpg}
+\centering
+\includegraphics[width=.6\linewidth]{figures/CV_example.jpg}
 
-  \href{https://spencek7746.github.io/Senior-Design-Project}{Webpage}
+\href{https://spencek7746.github.io/Senior-Design-Project}{Webpage}
 }
 
 %\begin{frame}[fragile]
@@ -118,7 +125,7 @@
 
 
 %\frameT{How to include images} {
-%% \includegraphics[width=.7\linewidth]{figures/image.pdf}
+  %% \includegraphics[width=.7\linewidth]{figures/image.pdf}
 %}
 
 
@@ -136,7 +143,7 @@
 
 %    \end{minipage}
 %  \end{figure}
-
+  
 %\end{frame}
 
 
@@ -157,7 +164,7 @@
 %}
 
 \frameT{Any Questions?} {
-
+  
   \begin{center}
     Questions?
   \end{center}
@@ -169,7 +176,7 @@
 
   Further project/author information:
   \begin{center}
-    Please see our Github repo: \href{https://github.com/Spencek7746/Senior-Design-Project}{https://github.com/Spencek7746/Senior-Design-Project}
+  Please see our Github repo: \href{https://github.com/Spencek7746/Senior-Design-Project}{https://github.com/Spencek7746/Senior-Design-Project}
   \end{center}
   \begin{center}
     \includegraphics[width=4cm]{figures/6AnLddq.png}
@@ -190,7 +197,7 @@
 
 %Empty Page
 %\frameT{Frame 1}{
-%}
+%}  
 
 
 \end{document}
