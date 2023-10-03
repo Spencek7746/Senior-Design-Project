@@ -10,3 +10,4 @@
 *~
 *.vsidx
 /.vs/
+*.synctex.gz
