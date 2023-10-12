@@ -76,7 +76,7 @@
 % Paper metadata (use plain text, for PDF inclusion and later
 % re-using, if desired).  Use \emtpyauthor when submitting for review
 % so you remain anonymous.
-\def\plaintitle{Senior Design Project - ParkSense}
+\def\plaintitle{ParkSense}
 \def\plainauthor{First Author, Second Author, Third Author,
   Fourth Author, Fifth Author, Sixth Author}
 \def\emptyauthor{}
@@ -149,21 +149,34 @@
 
 \maketitle
 
-\begin{abstract}
+%----------OLD ABSTRACT-----------------------------------------------------------------------------------------------------------------
+\iffalse \begin{abstract}
 Our campus suffers from insufficient parking spaces. This has led 
 to students parking farther away from campus, leading to longer-than-expected
-travel times to arrive to class. Consequentially, because some students arrive late, they
+travel times to arrive at class. Consequentially, because some students arrive late, they
 disrupt the lecture and leave a mark on their attendance. \\\\
 To address this issue, we would like to introduce you to our IoT approach to solving this problem by using 
 OpenCV, YOLOv8, a Raspberry Pi, and a camera module. With OpenCV's real-time computer vision library and YOLOv8's deep learning capabilities, we will 
 explain how we built our own object detection software that is trained on custom data to 
 detect empty and taken parking spots. \\\\
-The scope of this project is to use computer vision and a camera stream to detect in real time the availability of parking in a parking lot. The computer vision software will be trained on a custom data set for accuracy. A Raspberry Pi is used for collecting data, running calculations, and outputting the results of the pattern recognition. A user interface in the form of a website will be available for the user, which will update periodically and accurately communicate the availability of parking spots. Additional analysis will be available regarding the best and worst times to find open parking based on periodic samples taken.
+The scope of this project is to use computer vision and a camera stream to detect in real-time the availability of parking in a parking lot. The computer vision software will be trained on a custom data set for accuracy. A Raspberry Pi is used for collecting data, running calculations, and outputting the results of pattern recognition. A user interface in the form of a website will be available for the user, which will update periodically and accurately communicate the availability of parking spots. Additional analysis will be available regarding the best and worst times to find open parking based on periodic samples taken.
+\end{abstract} \fi
+%---------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{abstract}
+Insufficient parking spaces on our campus, exacerbated by a new building occupying a large section of a previous lot, have forced students to park farther away. Consequently, this has led to increased travel times to classes, resulting in disruptions and attendance issues.
+
+To address this challenge, we present an IoT solution utilizing OpenCV, YOLOv8, a Raspberry Pi, and a camera module. Our custom-built object detection software, leveraging OpenCV's real-time computer vision and YOLOv8's deep learning capabilities, focuses on identifying available and occupied parking spots.
+
+The project's scope involves real-time parking availability detection using computer vision and a camera stream. The software, trained on a tailored dataset for precision, runs on a Raspberry Pi, handling data collection, calculations, and pattern recognition results.
+
+Users can access a website interface for accurate, periodic updates on parking spot availability. While the technology's implementation is the primary focus, future iterations may explore additional features, such as insights into optimal parking times.
+
+However, we acknowledge the speculative nature of this aspect and emphasize delivering the core functionality of real-time parking detection.
 \end{abstract}
 
-
 % Author Keywords
-\keywords{\plainkeywords}
+%\keywords{\plainkeywords}
 
 
 
@@ -172,9 +185,10 @@ The purpose of developing ParkSense is to detect and deliver relevant informatio
 
 The technologies in use are primarily software-based. A camera feed is used for data input, and a Raspberry Pi can be used for data processing and delivery. We intend to show how to build a data set for training a model, how to train said model using the data set, and how you can use the model to generate a useful set of data to feed to a user interface. We want to show how to do all of this with the selected modules that we will use for this project: OpenCV, YOLOv8, and RoboFlow.
 
+\section{Technology}
+Parksense makes use of several technologies for monitoring the lot and presenting data. A Raspberry Pi and its associated camera module were chosen for its practicality. They are portable and inexpensive, allowing for quick deployment wherever needed. \\
+Several open license Python packages were used for building and training the model, and for real time video processing.
 OpenCV will provide computer vision for real-time processing for our video feed while YOLOv8 will provide a deep learning algorithm for training on our dataset and producing weights for our model once training is complete. RoboFlow will help with labelling each image of our mock-up with taken and empty instances as it provides extensive image annotation tools needed to produce a training data-set that is accurate and efficient. We will record mean average confidence, recalls, and object loss across different epoch values to show how the algorithm produces more accurate results with more training.
-
-
 
 \section{Page Size and Columns}
 On each page your material should fit within a rectangle of 7 $\times$
