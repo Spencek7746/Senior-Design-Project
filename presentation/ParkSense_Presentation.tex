@@ -62,9 +62,10 @@
 
 \section{Introduction}
 \frameT{Motivation} {
-  Background
    \begin{figure}[ht]
-   \begin{minipage}[c]{0.4\linewidth}
+   \hspace{-2.0cm}\begin{minipage}[c]{0.5\linewidth}
+   Background
+   \smallskip
   \begin{enumerate}
   \item Parking Shortage%
       \bigskip
@@ -72,13 +73,12 @@
      \bigskip
   \end{enumerate}
    \end{minipage}
-   \hspace{0.5cm}
-   \begin{minipage}[c]{0.4\linewidth}
+   \hspace{-1.0cm}\begin{minipage}[c]{0.4\linewidth}
 \centering
-\includegraphics[width=1.1\linewidth]{figures/lot_1.jpg}
+\includegraphics[width=1.3\linewidth]{figures/humanities_lot_before.jpg}
+\includegraphics[width=1.3\linewidth]{figures/humanities_lot_after.jpg}
    \end{minipage}
  \end{figure}
-  
 }
 
 %\frameT{Project Goals} {
@@ -89,6 +89,8 @@
 \section{}
 
 \frameT{Technology}{
+\begin{figure}[ht]
+   \begin{minipage}[c]{0.5\linewidth}
 \begin{enumerate}
     \item Computer Vision and Machine Learning
     \begin{enumerate}[(a)]
@@ -99,22 +101,87 @@
     \bigskip
     \item Hardware
     \begin{enumerate}[(a)]
+    % Mention portability
         \item Raspberry Pi 2 Model B
         \bigskip
         \item Raspberry Pi Camera Module
     \end{enumerate}
   \end{enumerate}
-
+  \end{minipage}
+   \hspace{0.5cm}
+   \begin{minipage}[c]{0.4\linewidth}
+\centering
+      \vspace{0.3cm}
+    \includegraphics[width=.6\linewidth]{figures/opencv_logo.png}
+       \vspace{0.5cm}
+    \includegraphics[width=0.7\linewidth]{figures/ultralytics_logo.jpg}
+    \includegraphics[width=0.5\linewidth]{figures/raspberrypi.png}
+   \end{minipage}
+   \end{figure}
 }
 
+\frameT{Goals}{
+\begin{enumerate}
+    \item Provide a web dashboard with lot information
+    \begin{enumerate}[(a)]
+        \item Current spot availability
+        \bigskip
+        \item Predictive trends
+    \end{enumerate}
+    \bigskip
+    \item Set precedent for similar projects
+    \begin{enumerate}[(a)]
+        \item Training custom data sets with machine learning
+        \bigskip
+        \item Portable computing and networking
+    \end{enumerate}
+  \end{enumerate}
+}
 
 \frameT{Demonstration}{
 \centering
-\includegraphics[width=.6\linewidth]{figures/CV_example.jpg}
+\includegraphics[width=.4\linewidth]{figures/lot_2.jpg}
 
 \href{https://spencek7746.github.io/Senior-Design-Project}{Webpage}
 }
 
+
+\frameT{Challenges}{
+   \begin{figure}[ht]
+   \begin{minipage}[c]{0.5\linewidth}
+  \begin{enumerate}
+  \item Compiling on low power devices%
+      \bigskip
+    \item Converting camera feed to usable input%
+     \bigskip
+  \end{enumerate}
+   \end{minipage}
+   \hspace{0.5cm}
+   \begin{minipage}[c]{0.4\linewidth}
+\centering
+\includegraphics[width=0.9\linewidth]{figures/lot_3.jpg}
+   \end{minipage}
+   \end{figure}
+}
+
+\frameT{Future Work}{
+\begin{enumerate}
+    \item Monitor a real lot
+    % \begin{enumerate}[(a)]
+    %     \item OpenCV
+    %     \bigskip
+    %     \item Ultralytics: YOLOv8
+    % \end{enumerate}
+    \bigskip
+    \item Push notifications
+    \begin{enumerate}[(a)]
+        \item Optional messages through text or email
+    \end{enumerate}
+    \bigskip
+    \item Statistical analysis of parking trends
+  \end{enumerate}
+
+}
 %\begin{frame}[fragile]
 %\frametitle{Family Tree Knowledge Base}
 %Facts:
