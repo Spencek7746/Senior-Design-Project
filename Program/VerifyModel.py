@@ -55,10 +55,11 @@ def verifyModel():
         y2 = int(y2)
         class_id = int(class_id)
 
-        if class_id == 0:  
-            color = (0, 255, 0) 
-        elif class_id == 1: 
-            color = (0, 0, 255) 
+        if score > threshold:
+            if class_id == 0:  
+                color = (0, 255, 0) 
+            elif class_id == 1: 
+                color = (0, 0, 255) 
 
         cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), color, 4)
         cv2.putText(image, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)), cv2.FONT_HERSHEY_SIMPLEX, 1.3, color, 3, cv2.LINE_AA)
