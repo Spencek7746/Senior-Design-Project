@@ -1,11 +1,16 @@
+import sys
+import logging
 import cv2
 import numpy as np
 from ultralytics import YOLO
 
 def verifyModel():
+# redirect output so it can actually be captured
+    logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
     model = YOLO(r'../runs/detect/test_model250/weights/best.pt')
 
     image_path = r'./test.jpg'
+#    image_path = r'../examples/exampleImg4.jpg'
     image = cv2.imread(image_path)
 
     threshold = 0.5;
@@ -34,7 +39,6 @@ def verifyModel():
         cv2.putText(image, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)), cv2.FONT_HERSHEY_SIMPLEX, 1.3, color, 3, cv2.LINE_AA)
 
     cv2.imwrite("./processed.jpg", image)
-
 
 verifyModel()
 #verifyModelVideo()
