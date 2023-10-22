@@ -11,3 +11,6 @@
 *.vsidx
 /.vs/
 *.synctex.gz
+/Program/output.txt
+/Program/unprocessed.jpg
+/Program/processed.jpg

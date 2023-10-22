@@ -9,7 +9,7 @@ def verifyModel():
     logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
     model = YOLO(r'../runs/detect/test_model250/weights/best.pt')
 
-    image_path = r'./test.jpg'
+    image_path = r'./unprocessed.jpg'
 #    image_path = r'../examples/exampleImg4.jpg'
     image = cv2.imread(image_path)
 
