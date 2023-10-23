@@ -5,11 +5,20 @@ import numpy as np
 from ultralytics import YOLO
 
 def verifyModel():
+    inputPath = "./img/unprocessed"
+    outputPath = "./img/processed"
+# find input photo
+    if len(sys.argv) > 1:
+      inputPath += str(sys.argv[1]) + ".jpg"
+      outputPath += str(sys.argv[1]) + ".jpg"
+    else:
+      inputPath += ".jpg"
+      outputPath += ".jpg"
 # redirect output so it can actually be captured
     logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
     model = YOLO(r'../runs/detect/test_model250/weights/best.pt')
 
-    image_path = r'./unprocessed.jpg'
+    image_path = inputPath
 #    image_path = r'../examples/exampleImg4.jpg'
     image = cv2.imread(image_path)
 
@@ -38,7 +47,8 @@ def verifyModel():
         cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), color, 4)
         cv2.putText(image, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)), cv2.FONT_HERSHEY_SIMPLEX, 1.3, color, 3, cv2.LINE_AA)
 
-    cv2.imwrite("./processed.jpg", image)
+#    cv2.imwrite("./processed.jpg", image)
+    cv2.imwrite(outputPath, image)
 
 verifyModel()
 #verifyModelVideo()
