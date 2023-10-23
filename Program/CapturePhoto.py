@@ -12,7 +12,8 @@ if __name__ == "__main__":
     outputPath += "unprocessed.jpg"
   print(outputPath)
   picam2 = Picamera2()
-  camera_config = picam2.create_still_configuration(main={"size": (1920, 1080)}, lores={"size": (640, 480)}, display="lores")
+#640 x 480
+  camera_config = picam2.create_still_configuration(main={"size": (1920, 1080)}, lores={"size": (1920, 1080)}, display="lores")
   picam2.configure(camera_config)
   picam2.start()
   picam2.capture_file(outputPath)
