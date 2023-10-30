@@ -86,7 +86,20 @@
     <h3 class="subsubheading">Empty Spaces: <span id="empty-spaces">25</span></h3>
 
     <script>
-        function updateProgressBar(percentage) {
+	const ws = new WebSocket("ws://localhost:8082");
+
+	ws.addEventListener("open", () =>{
+	  console.log("We are connected");
+
+	  ws.send("Hey, how's it going?");
+	});
+
+	ws.addEventListener("message", ({ data }) => {
+	  const received = data.split(" ");
+	  updateProgressBar(parseInt(received[0]), parseInt(received[1]));          
+	});
+        function updateProgressBar(open, taken) {
+	    percentage = Math.round(taken / (open + taken) * 100);
             const progressBar = document.getElementById("parking-progress");
             const progressText = progressBar.querySelector(".progress-text");
             const emptySpacesElement = document.getElementById("empty-spaces");
@@ -98,12 +111,13 @@
             progressBar.classList.toggle("filling_up", percentage >= 25 && percentage < 75); 
             progressBar.classList.toggle("full", percentage >= 75);
 
-            const totalSpaces = 100; // Assuming total parking spaces
-            const emptySpaces = totalSpaces * (100 - percentage) / 100;
-            emptySpacesElement.textContent = emptySpaces.toFixed(0);
+//            const totalSpaces = 100; // Assuming total parking spaces
+//            const emptySpaces = totalSpaces * (100 - percentage) / 100;
+            total = open + taken;
+            emptySpacesElement.textContent = open.toFixed(0);
         }
 
-        updateProgressBar(75); // Change this value as needed
+        updateProgressBar(25, 75); // Default value, empty, taken
     </script>
 
 <iframe 

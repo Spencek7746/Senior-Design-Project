@@ -12,5 +12,6 @@
 /.vs/
 *.synctex.gz
 /Program/output.txt
-/Program/unprocessed.jpg
-/Program/processed.jpg
+/Program/data.txt
+/Program/img/*.jpg
+/server/node_modules
